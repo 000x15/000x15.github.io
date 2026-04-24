@@ -1,0 +1,182 @@
+/* ========================================
+   ANIMATIONS.CSS — Transitions, Samurai Effects
+   ======================================== */
+
+/* --- Transition Overlay (Katana Wipe) --- */
+#transition-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--bg-void);
+  transform: scaleX(0);
+  transform-origin: left center;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+#transition-overlay::after {
+  content: '';
+  position: absolute;
+  right: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: var(--red-ember);
+  box-shadow: 0 0 20px var(--red-hot), 0 0 60px var(--red-glow);
+}
+
+#transition-overlay.sweep-in {
+  animation: katana-in 0.22s ease-in forwards;
+}
+
+#transition-overlay.sweep-out {
+  transform-origin: right center;
+  animation: katana-out 0.30s ease-out forwards;
+}
+
+@keyframes katana-in {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+@keyframes katana-out {
+  from { transform: scaleX(1); }
+  to   { transform: scaleX(0); }
+}
+
+/* --- Content Stagger Fade-Up --- */
+.page-content.animate-in > * {
+  opacity: 0;
+  transform: translateY(12px);
+  animation: fade-up 0.35s ease forwards;
+}
+
+.page-content.animate-in > *:nth-child(1)  { animation-delay: 0.05s; }
+.page-content.animate-in > *:nth-child(2)  { animation-delay: 0.08s; }
+.page-content.animate-in > *:nth-child(3)  { animation-delay: 0.11s; }
+.page-content.animate-in > *:nth-child(4)  { animation-delay: 0.14s; }
+.page-content.animate-in > *:nth-child(5)  { animation-delay: 0.17s; }
+.page-content.animate-in > *:nth-child(6)  { animation-delay: 0.20s; }
+.page-content.animate-in > *:nth-child(7)  { animation-delay: 0.23s; }
+.page-content.animate-in > *:nth-child(8)  { animation-delay: 0.26s; }
+.page-content.animate-in > *:nth-child(9)  { animation-delay: 0.29s; }
+.page-content.animate-in > *:nth-child(10) { animation-delay: 0.32s; }
+.page-content.animate-in > *:nth-child(n+11) { animation-delay: 0.35s; }
+
+@keyframes fade-up {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Content Fade Out --- */
+.page-content.fade-out > * {
+  transition: opacity 0.15s ease;
+  opacity: 0;
+}
+
+/* --- Horizontal Rule — Sword Strike --- */
+.page-content hr {
+  border: none;
+  height: 1px;
+  background: var(--red-ember);
+  margin: 2.5rem 0;
+  position: relative;
+  opacity: 0.6;
+}
+
+.page-content hr::before,
+.page-content hr::after {
+  content: '';
+  position: absolute;
+  top: -4px;
+  width: 1px;
+  height: 9px;
+  background: var(--red-ember);
+}
+
+.page-content hr::before { left: 0; }
+.page-content hr::after  { right: 0; }
+
+/* --- Corner Bracket Cards --- */
+.card-bracket {
+  position: relative;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-dim);
+  padding: 1.5rem;
+  transition: border-color 0.3s ease;
+}
+
+.card-bracket:hover { border-color: var(--border-accent); }
+
+.card-bracket::before,
+.card-bracket::after {
+  content: '';
+  position: absolute;
+  width: 16px; height: 16px;
+  border-color: var(--red-ember);
+  border-style: solid;
+  transition: border-color 0.3s ease, width 0.3s ease, height 0.3s ease;
+}
+
+.card-bracket::before {
+  top: -1px; left: -1px;
+  border-width: 2px 0 0 2px;
+}
+
+.card-bracket::after {
+  bottom: -1px; right: -1px;
+  border-width: 0 2px 2px 0;
+}
+
+.card-bracket:hover::before,
+.card-bracket:hover::after {
+  width: 24px; height: 24px;
+  border-color: var(--red-hot);
+}
+
+/* --- Kamon Rotate on Hover --- */
+.nav-logo:hover .kamon {
+  animation: kamon-pulse 0.6s ease;
+}
+
+@keyframes kamon-pulse {
+  0%   { transform: rotate(0deg); }
+  50%  { transform: rotate(15deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* --- Link Hover Glow --- */
+.page-content a { position: relative; }
+
+.page-content a::before {
+  content: '';
+  position: absolute;
+  inset: -2px -4px;
+  background: var(--red-glow);
+  border-radius: 2px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.page-content a:hover::before { opacity: 1; }
+
+/* --- Loading Pulse --- */
+.loading-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 0;
+  gap: 6px;
+}
+
+.loading-indicator span {
+  width: 6px; height: 6px;
+  background: var(--red-ember);
+  border-radius: 50%;
+  animation: pulse-dot 1s ease-in-out infinite;
+}
+
+.loading-indicator span:nth-child(2) { animation-delay: 0.15s; }
+.loading-indicator span:nth-child(3) { animation-delay: 0.30s; }
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 0.2; transform: scale(0.8); }
+  50%      { opacity: 1;   transform: scale(1.2); }
+}

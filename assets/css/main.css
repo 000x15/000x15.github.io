@@ -1,0 +1,85 @@
+/* ========================================
+   MAIN.CSS — Core Variables, Resets, Typography
+   Ronin Theme: Red/Black Samurai × Cyber Operator
+   ======================================== */
+
+:root {
+  --bg-void:        #050505;
+  --bg-surface:     #0d0d0d;
+  --bg-raised:      #141414;
+  --border-dim:     #1a1a1a;
+  --border-accent:  #2a0000;
+
+  --red-blood:      #8b0000;
+  --red-ember:      #cc1100;
+  --red-hot:        #ff2200;
+  --red-glow:       rgba(204, 17, 0, 0.15);
+
+  --text-primary:   #e8e8e8;
+  --text-secondary: #888888;
+  --text-dim:       #444444;
+  --text-red:       #cc1100;
+
+  --gold-kamon:     #8b6914;
+
+  --font-display:   'Shippori Mincho B1', serif;
+  --font-heading:   'Bebas Neue', sans-serif;
+  --font-body:      'IBM Plex Mono', monospace;
+  --font-ui:        'Rajdhani', sans-serif;
+
+  --nav-height:     64px;
+  --content-width:  860px;
+  --content-wide:   1100px;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  color: var(--text-primary);
+  background-color: var(--bg-void);
+  line-height: 1.7;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--red-blood);
+  color: var(--text-primary);
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-void); }
+::-webkit-scrollbar-thumb { background: var(--border-accent); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--red-blood); }
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  font-weight: 400;
+}
+
+a {
+  color: var(--red-ember);
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+a:hover { color: var(--red-hot); }
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}

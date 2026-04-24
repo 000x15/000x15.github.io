@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="0x15 — Red Team Operator Portfolio. Cybersecurity student, CTF player, and adversary simulation specialist.">
+    <meta name="theme-color" content="#050505">
+    <title>0x15 — Red Team Operator</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@800&family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500&family=Rajdhani:wght@500;600&display=swap" rel="stylesheet">
+
+    <!-- Highlight.js Theme -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/base16/black-metal.min.css">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/layout.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/markdown.css">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%23cc1100'/></svg>">
+</head>
+<body>
+    <!-- Transition Overlay -->
+    <div id="transition-overlay"></div>
+
+    <!-- Navigation -->
+    <nav id="main-nav">
+        <div class="nav-inner">
+            <a href="#about" class="nav-logo" id="nav-logo">
+                <svg class="kamon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Outer ring -->
+                    <circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <!-- Inner ring -->
+                    <circle cx="50" cy="50" r="30" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                    <!-- Cardinal lines -->
+                    <line x1="50" y1="4" x2="50" y2="20" stroke="currentColor" stroke-width="2"/>
+                    <line x1="50" y1="80" x2="50" y2="96" stroke="currentColor" stroke-width="2"/>
+                    <line x1="4" y1="50" x2="20" y2="50" stroke="currentColor" stroke-width="2"/>
+                    <line x1="80" y1="50" x2="96" y2="50" stroke="currentColor" stroke-width="2"/>
+                    <!-- Diagonal lines -->
+                    <line x1="17" y1="17" x2="27" y2="27" stroke="currentColor" stroke-width="1.5"/>
+                    <line x1="73" y1="73" x2="83" y2="83" stroke="currentColor" stroke-width="1.5"/>
+                    <line x1="83" y1="17" x2="73" y2="27" stroke="currentColor" stroke-width="1.5"/>
+                    <line x1="27" y1="73" x2="17" y2="83" stroke="currentColor" stroke-width="1.5"/>
+                    <!-- Center point -->
+                    <circle cx="50" cy="50" r="4" fill="currentColor"/>
+                </svg>
+                <span class="logo-text">0x15</span>
+            </a>
+
+            <div class="nav-links" id="nav-links">
+                <a href="#about" class="nav-link" data-route="about">About</a>
+                <a href="#writeups" class="nav-link" data-route="writeups">Writeups</a>
+                <a href="#blogs" class="nav-link" data-route="blogs">Blogs</a>
+                <a href="#certs" class="nav-link" data-route="certs">Certs</a>
+            </div>
+
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="#about" class="mobile-link" data-route="about">About</a>
+        <a href="#writeups" class="mobile-link" data-route="writeups">Writeups</a>
+        <a href="#blogs" class="mobile-link" data-route="blogs">Blogs</a>
+        <a href="#certs" class="mobile-link" data-route="certs">Certs</a>
+    </div>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <div class="ink-wash"></div>
+        <div class="page-content" id="page-content">
+            <!-- Markdown content rendered here -->
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="main-footer">
+        <div class="footer-inner">
+            <div class="footer-line"></div>
+            <p>&copy; 2025 0x15 — Built with discipline.</p>
+        </div>
+    </footer>
+
+    <!-- External Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    <!-- App Scripts (order matters: transitions → renderer → router) -->
+    <script src="assets/js/transitions.js"></script>
+    <script src="assets/js/renderer.js"></script>
+    <script src="assets/js/router.js"></script>
+</body>
+</html>
